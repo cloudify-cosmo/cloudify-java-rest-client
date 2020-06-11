@@ -18,7 +18,7 @@ pipeline {
     branch = "${env.BRANCH_NAME}"
     workspace = "${env.WORKSPACE}"
     target_dir = "cloudify-java-rest-client-${env.BUILD_NUMBER}"
-    cloudify-java-rest-client = 'https://raw.githubusercontent.com/cloudify-cosmo/cloudify-java-rest-client'
+    cloudify_java_rest_client = 'https://raw.githubusercontent.com/cloudify-cosmo/cloudify-java-rest-client'
   }
 
   stages {
