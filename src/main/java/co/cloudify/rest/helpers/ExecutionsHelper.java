@@ -32,7 +32,9 @@ public class ExecutionsHelper {
      *                     won't be followed. For a no-op following (that is, just
      *                     wait until execution is over), use
      *                     {@link DefaultExecutionFollowCallback}
-     * 
+     *
+     * @param pollingInterval polling interval
+     *
      * @return The updated {@link Execution} object.
      * 
      * @throws Exception May be anything thrown by Cloudify's REST client.
@@ -61,7 +63,9 @@ public class ExecutionsHelper {
      *                     won't be followed. For a no-op following (that is, just
      *                     wait until execution is over), use
      *                     {@link DefaultExecutionFollowCallback}
-     * 
+     *
+     * @param pollingInterval polling interval
+     *
      * @return The updated {@link Execution} object.
      * 
      * @throws Exception May be anything thrown by Cloudify's REST client.
@@ -82,7 +86,8 @@ public class ExecutionsHelper {
      *                      won't be followed. For a no-op following (that is, just
      *                      wait until execution is over), use
      *                      {@link DefaultExecutionFollowCallback}
-     * 
+     * @param pollingInterval polling interval
+     *
      * @return The updated {@link Execution} object.
      * 
      * @throws Exception May be anything thrown by Cloudify's REST client.
@@ -103,6 +108,8 @@ public class ExecutionsHelper {
      * @param pollingInterval  number of milliseconds to wait between pollings
      * 
      * @return The most up-to-date representation of the execution.
+     *
+     * @throws Exception May be anything thrown by Cloudify's REST client.
      */
     public static Execution followExecution(final ExecutionsClient executionsClient, Execution execution,
             ExecutionFollowCallback callback, long pollingInterval) throws Exception {

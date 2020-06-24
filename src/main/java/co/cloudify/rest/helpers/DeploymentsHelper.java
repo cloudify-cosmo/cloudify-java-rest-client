@@ -28,7 +28,7 @@ public class DeploymentsHelper {
      * @param inputs      deployment inputs
      * @param callback    an {@link ExecutionFollowCallback} instance containing
      *                    callback methods
-     * 
+     * @param pollingInterval polling interval
      * @return The created {@link Deployment} instance.
      * 
      * @throws Exception All exceptions are percolated.
@@ -63,6 +63,7 @@ public class DeploymentsHelper {
      * 
      * @param client a {@link CloudifyClient} instance
      * @param id     ID of deployment to delete
+     * @param pollingInterval polling interval
      */
     public static void deleteDeploymentAndWait(CloudifyClient client, String id, final long pollingInterval) {
         DeploymentsClient deploymentsClient = client.getDeploymentsClient();

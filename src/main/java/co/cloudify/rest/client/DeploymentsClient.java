@@ -156,6 +156,8 @@ public class DeploymentsClient extends AbstractCloudifyClient {
      * Deletes a deployment. Note: this operation is asynchronous.
      * 
      * @param id deployment to delete
+     *
+     * @return A {@link Deployment} instance for the new deployment.
      */
     public Deployment delete(final String id) {
         try {
