@@ -16,9 +16,10 @@ public class EventsHelper {
     /**
      * Returns the string representation of an event/log record.
      * 
-     * @param event event/log record
-     * @param includeLevel include level
-     *
+     * @param event        event/log record
+     * @param includeLevel if <code>true</code>, then the event's logging level will
+     *                     be included
+     * 
      * @return String representation.
      */
     public static String formatEvent(final Event event, final boolean includeLevel) {
