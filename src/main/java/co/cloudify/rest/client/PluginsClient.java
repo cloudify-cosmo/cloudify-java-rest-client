@@ -7,12 +7,15 @@ import java.io.InputStream;
 import java.net.URL;
 import java.nio.file.Files;
 import java.util.Arrays;
+import java.util.Collections;
 
+import javax.ws.rs.NotFoundException;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.Invocation.Builder;
 import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 
 import org.apache.commons.compress.archivers.ArchiveEntry;
@@ -20,7 +23,9 @@ import org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream;
 import org.apache.commons.io.FileUtils;
 
 import co.cloudify.rest.client.exceptions.CloudifyClientException;
+import co.cloudify.rest.client.exceptions.PluginNotFoundException;
 import co.cloudify.rest.helpers.Utilities;
+import co.cloudify.rest.model.ListResponse;
 import co.cloudify.rest.model.Plugin;
 
 /**
@@ -41,6 +46,8 @@ import co.cloudify.rest.model.Plugin;
 public class PluginsClient extends AbstractCloudifyClient {
     /** Base API path. */
     private static final String BASE_PATH = "/api/v3.1/plugins";
+    /** Path for specific resource. */
+    private static final String ID_PATH = BASE_PATH + "/{id}";
 
     public PluginsClient(Client restClient, WebTarget base) {
         super(restClient, base);
@@ -52,6 +59,14 @@ public class PluginsClient extends AbstractCloudifyClient {
 
     protected Builder getPluginsBuilder() {
         return getBuilder(getPluginsTarget());
+    }
+
+    protected WebTarget getPluginTarget(final String id) {
+        return getTarget(ID_PATH, Collections.singletonMap("id", id));
+    }
+
+    protected Builder getBuilder(final String id) {
+        return getBuilder(getPluginTarget(id));
     }
 
     /**
@@ -113,5 +128,37 @@ public class PluginsClient extends AbstractCloudifyClient {
                 tempZip.delete();
             }
         }
+    }
+
+    /**
+     * Retrieves a plugin.
+     * 
+     * @param id plugin's UUID
+     * 
+     * @return The plugin details
+     */
+    public Plugin get(final String id) {
+        try {
+            return getBuilder(id).get(Plugin.class);
+        } catch (NotFoundException ex) {
+            throw new PluginNotFoundException(id, ex);
+        } catch (WebApplicationException ex) {
+            throw CloudifyClientException.create("Failed retrieving plugin", ex);
+        }
+    }
+
+    /**
+     * Retrieves a list of all plugins.
+     * 
+     * @return  List of all plugins.
+     */
+    public ListResponse<Plugin> list() {
+        WebTarget target = getTarget(BASE_PATH);
+        try {
+            return getBuilder(target).get(new GenericType<ListResponse<Plugin>>() {});
+        } catch (WebApplicationException ex) {
+            throw CloudifyClientException.create("Failed listing plugins", ex);
+        }
+
     }
 }

@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>co.cloudify</groupId>
     <artifactId>rest-client</artifactId>
-    <version>5.0.5.1</version>
+    <version>5.0.5.2-SNAPSHOT</version>
     <name>rest-client</name>
     <description>Cloudify java rest client</description>
     <url>https://github.com/cloudify-cosmo/cloudify-java-rest-client</url>
