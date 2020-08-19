@@ -58,6 +58,14 @@ public class Plugin implements Serializable {
     @XmlElement(name = "resource_availability")
     private ResourceAvailability resourceAvailability;
 
+    public String getPackageName() {
+        return packageName;
+    }
+    
+    public String getPackageVersion() {
+        return packageVersion;
+    }
+    
     @Override
     public String toString() {
         return new ToStringBuilder(this)
