@@ -1,7 +1,6 @@
 pipeline {
   agent {
     kubernetes {
-      label 'java-rest-client'
       defaultContainer 'jnlp'
       yamlFile 'jenkins/build-pod.yaml'
     }
