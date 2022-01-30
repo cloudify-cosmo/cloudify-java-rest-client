@@ -45,7 +45,19 @@ public class Blueprint implements Serializable {
     private String visibility;
     @XmlElement(name = "is_hidden")
     private boolean hidden;
-
+    @XmlElement(name = "skipped_fields")
+    private Object skippedFields;
+    @XmlElement
+    private String state;
+    @XmlElement
+    private String error;
+    @XmlElement(name = "error_traceback")
+    private String errorTraceback;
+    @XmlElement
+    private Object labels;
+    @XmlElement(name = "upload_execution")
+    private Object uploadExecution;
+    
     public Blueprint() {
         super();
     }

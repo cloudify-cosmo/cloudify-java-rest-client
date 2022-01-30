@@ -55,6 +55,22 @@ public class Execution implements Serializable {
     private Map<String, Object> parameters;
     @XmlElement
     private String error;
+    @XmlElement(name = "deployment_display_name")
+    private String deploymentDisplayName;
+    @XmlElement(name = "execution_group_id")
+    private String executionGroupId;
+    @XmlElement(name = "allow_custom_parameters")
+    private Boolean allowCustomParameters;
+    @XmlElement(name = "finished_operations")
+    private Integer finishedOperations;
+    @XmlElement(name = "total_operations")
+    private Integer totalOperations;
+    @XmlElement
+    private Boolean resume;
+    @XmlElement(name = "token")
+    private String token;
+
+
 
     public String getId() {
         return id;

@@ -24,6 +24,9 @@ public class BlueprintInput implements Serializable {
     private String description;
     @XmlElement
     private List<InputConstraint> constraints;
+    @XmlElement(name = "display_label")
+    private String displayLabel;
+    @XmlElement(name = "hidden")
 
     public String getType() {
         return type;

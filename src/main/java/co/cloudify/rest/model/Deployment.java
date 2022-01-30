@@ -60,6 +60,48 @@ public class Deployment implements Serializable {
     private Map<String, Object> scalingGroups;
     @XmlElement(name = "runtime_only_evaluation")
     private Boolean runtimeOnlyEvaluation;
+    @XmlElement(name = "installation_status")
+    private String installationStatus;
+    @XmlElement(name = "deployment_status")
+    private String deploymentStatus;
+    @XmlElement(name = "sub_services_status")
+    private String subServicesStatus;
+    @XmlElement(name = "sub_environments_status")
+    private String subEnvironmentsStatus;
+    @XmlElement(name = "sub_services_count")
+    private Integer subServicesCount;
+    @XmlElement(name = "sub_environments_count")
+    private Integer subEnvironmentsCount;
+    @XmlElement(name = "display_name")
+    private String displayName;
+    @XmlElement(name = "resource_tags")
+    private Object resourceTags;
+    @XmlElement(name = "latest_execution_finished_operations")
+    private Integer latestExecutionFinishedOperations;
+    @XmlElement(name = "latest_execution_total_operations")
+    private Integer latestExecutionTotalOperations;
+    @XmlElement(name = "environment_type")
+    private String environmentType;
+    @XmlElement(name = "latest_execution_status")
+    private String latestExecutionStatus;
+    @XmlElement(name = "labels")
+    private Object labels;
+    @XmlElement(name = "has_sub_deployments")
+    private Boolean hasSubDeployments;
+    @XmlElement (name = "workdir_zip")
+    private String workdir_zip;
+    @XmlElement(name = "deployment_group_id")
+    private String deploymentGroupId;
+    @XmlElement(name = "skipped_fields")
+    private Object skippedFields;
+    @XmlElement(name = "schedules")
+    private List<Object> schedules;
+    @XmlElement(name = "create_execution")
+    private Object createExecution;
+    @XmlElement(name = "latest_execution")
+    private Object latestExecution;
+    @XmlElement(name = "deployment_groups")
+    private List<Object> deploymentGroups;
 
     public String getId() {
         return id;
@@ -229,6 +271,47 @@ public class Deployment implements Serializable {
         this.runtimeOnlyEvaluation = runtimeOnlyEvaluation;
     }
 
+    public String getInstallationStatus() {
+        return this.installationStatus;
+    }
+
+    public void setInstallationStatus(String installationStatus) {
+        this.installationStatus = installationStatus;
+    }
+
+    public String getDeploymentStatus() {
+        return this.deploymentStatus;
+    }
+
+    public void setDeploymentStatus(String deploymentStatus) {
+        this.deploymentStatus = deploymentStatus;
+    }
+
+    public String getSubServicesStatus() {
+        return this.subServicesStatus;
+    }
+
+    public void setSubServicesStatus(String subServicesStatus) {
+        this.subServicesStatus = subServicesStatus;
+    }
+
+    public String getSubEnvironmentsStatus() {
+        return this.subEnvironmentsStatus;
+
+    }
+
+    public void setSubEnvironmentsStatus(String subEnvironmentsStatus) {
+        this.subEnvironmentsStatus = subEnvironmentsStatus;
+    }
+
+    public Integer getSubServicesCount() {
+        return this.subServicesCount;
+    }
+
+    public void setSubServicesCount(Integer subServicesCount) {
+        this.subServicesCount = subServicesCount;
+    }
+
     @Override
     public String toString() {
         return new ToStringBuilder(this)
@@ -236,5 +319,21 @@ public class Deployment implements Serializable {
                 .append("blueprintId", blueprintId)
                 .append("inputs", inputs)
                 .toString();
+    }
+
+    public Integer getSubEnvironmentsCount() {
+        return subEnvironmentsCount;
+    }
+
+    public void setSubEnvironmentsCount(Integer subEnvironmentsCount) {
+        this.subEnvironmentsCount = subEnvironmentsCount;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 }

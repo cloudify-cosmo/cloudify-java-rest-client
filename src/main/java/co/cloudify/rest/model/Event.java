@@ -53,6 +53,14 @@ public class Event implements Serializable {
     private List<Object> errorCauses;
     @XmlElement(name = "reported_timestamp")
     private Date reportedTimestamp;
+    @XmlElement(name = "deployment_display_name")
+    private String deploymentDisplayName;
+    @XmlElement(name = "node_id")
+    private String nodeId;
+    @XmlElement(name = "message_code")
+    private String messageCode;
+    @XmlElement(name = "execution_group_id")
+    private String executionGroupId;
 
     public long getStorageId() {
         return storageId;

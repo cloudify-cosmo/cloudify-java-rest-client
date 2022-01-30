@@ -20,7 +20,6 @@ public class Workflow implements Serializable {
     private String name;
     private String operation;
     private String plugin;
-
     @XmlElement(name = "created_at")
     private Date createdAt;
     @XmlElement
@@ -45,6 +44,9 @@ public class Workflow implements Serializable {
     public Map<String, ParameterDefinition> getParameters() {
         return parameters;
     }
+
+    @XmlElement(name = "is_cascading")
+    private String cascading;
 
     @Override
     public String toString() {
