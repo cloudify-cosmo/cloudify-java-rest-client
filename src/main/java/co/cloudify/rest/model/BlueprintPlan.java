@@ -55,6 +55,17 @@ public class BlueprintPlan implements Serializable {
     private Map<String, Object> scalingGroups;
     @XmlElement
     private Map<String, Object> policies;
+    @XmlElement
+    private Object labels;
+    @XmlElement(name = "blueprint_labels")
+    private Object blueprintLabels;
+    @XmlElement(name = "resource_tags")
+    private Object resourceTags;
+    @XmlElement(name = "deployment_settings")
+    private Object deploymentSettings;
+    @XmlElement(name = "upload_execution")
+    private Object uploadExecution;
+
 
     public Map<String, BlueprintInput> getInputs() {
         return inputs;

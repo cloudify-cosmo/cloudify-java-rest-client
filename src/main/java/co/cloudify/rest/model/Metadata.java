@@ -18,6 +18,8 @@ public class Metadata implements Serializable {
 
     @XmlElement
     private Pagination pagination;
+    @XmlElement
+    private Object filtered;
 
     public Metadata() {
         super();
