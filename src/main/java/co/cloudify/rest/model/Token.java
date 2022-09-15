@@ -21,7 +21,19 @@ public class Token implements Serializable {
     private String value;
     @XmlElement
     private String role;
-
+    @XmlElement
+    private String id;
+    @XmlElement
+    private String expiration_date;
+    @XmlElement(name = "last_used")
+    private String lastUsed;
+    @XmlElement
+    private String description;
+    @XmlElement
+    private Object metadata;
+    @XmlElement
+    private Object items;
+    
     public String getValue() {
         return value;
     }
