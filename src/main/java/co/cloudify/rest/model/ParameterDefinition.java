@@ -1,6 +1,7 @@
 package co.cloudify.rest.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -19,6 +20,15 @@ public class ParameterDefinition implements Serializable {
     @XmlElement(name = "default")
     private Object defaultValue;
     private String description;
+
+    @XmlElement(name = "required")
+    private Boolean required;
+
+    @XmlElement(name = "item_type")
+    private Object itemType;
+
+    @XmlElement(name = "constraints")
+    private List<Object> constraints;
 
     public String getType() {
         return type;

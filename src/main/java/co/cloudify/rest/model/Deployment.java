@@ -102,6 +102,10 @@ public class Deployment implements Serializable {
     private Object latestExecution;
     @XmlElement(name = "deployment_groups")
     private List<Object> deploymentGroups;
+    @XmlElement(name = "drifted_instances")
+    private Integer driftedInstances;
+    @XmlElement(name = "unavailable_instances")
+    private Integer unavailableInstances;
 
     public String getId() {
         return id;

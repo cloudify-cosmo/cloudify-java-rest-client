@@ -47,7 +47,13 @@ public class Workflow implements Serializable {
 
     @XmlElement(name = "is_cascading")
     private String cascading;
-
+    
+    @XmlElement(name = "is_available")
+    private String availabe;
+    
+    @XmlElement(name = "availability_rules")
+    private Map<String, Object> availabilityRules;
+    
     @Override
     public String toString() {
         return new ToStringBuilder(this)

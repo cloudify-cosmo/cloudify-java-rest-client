@@ -61,7 +61,11 @@ public class Event implements Serializable {
     private String messageCode;
     @XmlElement(name = "execution_group_id")
     private String executionGroupId;
-
+    @XmlElement(name = "manager_name")
+    private String managerName;
+    @XmlElement(name = "agent_name")
+    private String agentName;
+    
     public long getStorageId() {
         return storageId;
     }
