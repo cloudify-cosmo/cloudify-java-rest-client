@@ -3,7 +3,7 @@ package co.cloudify.rest.client.params;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.ws.rs.client.WebTarget;
+import jakarta.ws.rs.client.WebTarget;
 
 import co.cloudify.rest.model.EventType;
 

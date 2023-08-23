@@ -1,6 +1,6 @@
 package co.cloudify.rest.client.exceptions;
 
-import javax.ws.rs.WebApplicationException;
+import jakarta.ws.rs.WebApplicationException;
 
 public class DeploymentNotFoundException extends CloudifyClientException {
     /** Serialization UID. */

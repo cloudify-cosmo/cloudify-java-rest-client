@@ -1,6 +1,6 @@
 package co.cloudify.rest.client.exceptions;
 
-import javax.ws.rs.WebApplicationException;
+import jakarta.ws.rs.WebApplicationException;
 
 public class ExecutionNotFoundException extends CloudifyClientException {
     /** Serialization UID. */

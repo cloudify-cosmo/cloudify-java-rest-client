@@ -2,10 +2,10 @@ package co.cloudify.rest.client;
 
 import java.util.List;
 
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.GenericType;
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.WebTarget;
+import jakarta.ws.rs.core.GenericType;
 
 import co.cloudify.rest.client.exceptions.CloudifyClientException;
 import co.cloudify.rest.model.ListResponse;
@@ -13,7 +13,7 @@ import co.cloudify.rest.model.Tenant;
 
 /**
  * A REST client for tenant-related operations.
- * 
+ *
  * @author Isaac Shabtay
  */
 public class TenantsClient extends AbstractCloudifyClient {

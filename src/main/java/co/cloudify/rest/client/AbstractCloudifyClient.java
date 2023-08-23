@@ -2,16 +2,16 @@ package co.cloudify.rest.client;
 
 import java.util.Map;
 
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.Invocation.Builder;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.Invocation.Builder;
+import jakarta.ws.rs.client.WebTarget;
+import jakarta.ws.rs.core.MediaType;
 
 import org.apache.commons.lang3.StringUtils;
 
 /**
  * Root class for all Cloudify clients.
- * 
+ *
  * @author Isaac Shabtay
  */
 public class AbstractCloudifyClient {

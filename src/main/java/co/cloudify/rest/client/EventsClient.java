@@ -1,9 +1,9 @@
 package co.cloudify.rest.client;
 
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.GenericType;
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.WebTarget;
+import jakarta.ws.rs.core.GenericType;
 
 import co.cloudify.rest.client.exceptions.CloudifyClientException;
 import co.cloudify.rest.client.params.EventsListParams;
@@ -14,7 +14,7 @@ import co.cloudify.rest.model.ListResponse;
 
 /**
  * Client for events and logs.
- * 
+ *
  * @author Isaac Shabtay
  */
 public class EventsClient extends AbstractCloudifyClient {
@@ -27,12 +27,12 @@ public class EventsClient extends AbstractCloudifyClient {
 
     /**
      * Lists events/logs for an execution.
-     * 
+     *
      * @param execution   the execution
      * @param fromEvent   sequential number of the event to start from
      * @param batchSize   how many events to fetch
      * @param includeLogs whether to include logs
-     * 
+     *
      * @return A {@link ListResponse} of {@link Event} instances.
      */
     public ListResponse<Event> list(final Execution execution, long fromEvent, long batchSize, boolean includeLogs) {
@@ -41,10 +41,10 @@ public class EventsClient extends AbstractCloudifyClient {
 
     /**
      * Lists all events/logs for an execution.
-     * 
+     *
      * @param execution   the execution
      * @param includeLogs whether to include logs
-     * 
+     *
      * @return A {@link ListResponse} of {@link Event} instances.
      */
     public ListResponse<Event> list(final Execution execution, boolean includeLogs) {
@@ -53,10 +53,10 @@ public class EventsClient extends AbstractCloudifyClient {
 
     /**
      * Lists all events/logs for an execution.
-     * 
+     *
      * @param executionId the execution ID
      * @param includeLogs whether to include logs
-     * 
+     *
      * @return A {@link ListResponse} of {@link Event} instances.
      */
     public ListResponse<Event> list(final String executionId, boolean includeLogs) {
@@ -65,12 +65,12 @@ public class EventsClient extends AbstractCloudifyClient {
 
     /**
      * Lists events and logs for a specific execution.
-     * 
+     *
      * @param executionId the execution ID
      * @param fromEvent   sequential number of the event to start from
      * @param batchSize   how many events to fetch
      * @param includeLogs whether to include logs
-     * 
+     *
      * @return A {@link ListResponse} of {@link Event} instances.
      */
     public ListResponse<Event> list(final String executionId, Long fromEvent, Long batchSize, boolean includeLogs) {

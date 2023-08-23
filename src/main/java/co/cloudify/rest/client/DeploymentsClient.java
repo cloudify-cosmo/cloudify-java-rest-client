@@ -3,13 +3,13 @@ package co.cloudify.rest.client;
 import java.util.Collections;
 import java.util.Map;
 
-import javax.ws.rs.NotFoundException;
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.client.Invocation.Builder;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.GenericType;
+import jakarta.ws.rs.NotFoundException;
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.Entity;
+import jakarta.ws.rs.client.Invocation.Builder;
+import jakarta.ws.rs.client.WebTarget;
+import jakarta.ws.rs.core.GenericType;
 
 import co.cloudify.rest.client.exceptions.CloudifyClientException;
 import co.cloudify.rest.client.exceptions.DeploymentNotFoundException;
@@ -22,7 +22,7 @@ import co.cloudify.rest.model.ListResponse;
 
 /**
  * Client for deployment-related operations.
- * 
+ *
  * @author Isaac Shabtay
  */
 public class DeploymentsClient extends AbstractCloudifyClient {
@@ -78,9 +78,9 @@ public class DeploymentsClient extends AbstractCloudifyClient {
 
     /**
      * Returns a specific deployment.
-     * 
+     *
      * @param id deployment's ID
-     * 
+     *
      * @return A {@link Deployment} instance describing the deployment.
      */
     public Deployment get(final String id) {
@@ -95,11 +95,11 @@ public class DeploymentsClient extends AbstractCloudifyClient {
 
     /**
      * Creates a deployment.
-     * 
+     *
      * @param id        new deployment's ID
      * @param blueprint blueprint to associate deployment with
      * @param inputs    deployment inputs
-     * 
+     *
      * @return A {@link Deployment} instance for the new deployment.
      */
     public Deployment create(final String id, final Blueprint blueprint, final Map<String, Object> inputs) {
@@ -108,11 +108,11 @@ public class DeploymentsClient extends AbstractCloudifyClient {
 
     /**
      * Creates a deployment. Note: this is an asynchronous operation.
-     * 
+     *
      * @param id          new deployment's ID
      * @param blueprintId blueprint to associate deployment with
      * @param inputs      deployment inputs
-     * 
+     *
      * @return A {@link Deployment} instance for the new deployment.
      */
     public Deployment create(final String id, final String blueprintId, final Map<String, Object> inputs) {
@@ -152,9 +152,9 @@ public class DeploymentsClient extends AbstractCloudifyClient {
 
     /**
      * Deletes a deployment. Note: this operation is asynchronous.
-     * 
+     *
      * @param id deployment to delete
-     * 
+     *
      * @return The deleted deployment.
      */
     public Deployment delete(final String id) {
