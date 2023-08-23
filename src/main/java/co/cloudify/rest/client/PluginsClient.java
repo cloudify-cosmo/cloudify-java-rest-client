@@ -9,14 +9,14 @@ import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.Collections;
 
-import javax.ws.rs.NotFoundException;
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.client.Invocation.Builder;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.GenericType;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.NotFoundException;
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.Entity;
+import jakarta.ws.rs.client.Invocation.Builder;
+import jakarta.ws.rs.client.WebTarget;
+import jakarta.ws.rs.core.GenericType;
+import jakarta.ws.rs.core.MediaType;
 
 import org.apache.commons.compress.archivers.ArchiveEntry;
 import org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream;
@@ -40,7 +40,7 @@ import co.cloudify.rest.model.Plugin;
  * <a href="https://cloudifysource.atlassian.net/browse/CYBL-939">CYBL-939</a>
  * for more information.
  * </p>
- * 
+ *
  * @author Isaac Shabtay
  */
 public class PluginsClient extends AbstractCloudifyClient {
@@ -72,9 +72,9 @@ public class PluginsClient extends AbstractCloudifyClient {
     /**
      * Uploads a plugin archive from a URL. The archive must include the Wagon file
      * and the <code>plugin.yaml</code> file.
-     * 
+     *
      * @param archiveUrl URL to archive
-     * 
+     *
      * @return A {@link Plugin} instance for the new plugin.
      */
     public Plugin upload(final URL archiveUrl) {
@@ -89,12 +89,12 @@ public class PluginsClient extends AbstractCloudifyClient {
 
     /**
      * Uploads a plugin.
-     * 
+     *
      * @param wagonLocation path or URL to Wagon
      * @param yamlLocation  path or URL to <code>plugin.yaml</code> file
-     * 
+     *
      * @return A {@link Plugin} instance for the new plugin
-     * 
+     *
      * @throws IOException Failed reading the wagon or the <code>plugin.yaml</code>
      *                     file.
      */
@@ -132,9 +132,9 @@ public class PluginsClient extends AbstractCloudifyClient {
 
     /**
      * Retrieves a plugin.
-     * 
+     *
      * @param id plugin's UUID
-     * 
+     *
      * @return The plugin details
      */
     public Plugin get(final String id) {
@@ -149,7 +149,7 @@ public class PluginsClient extends AbstractCloudifyClient {
 
     /**
      * Retrieves a list of all plugins.
-     * 
+     *
      * @return  List of all plugins.
      */
     public ListResponse<Plugin> list() {

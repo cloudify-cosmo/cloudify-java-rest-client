@@ -65,7 +65,8 @@ public class BlueprintPlan implements Serializable {
     private Object deploymentSettings;
     @XmlElement(name = "upload_execution")
     private Object uploadExecution;
-
+    @XmlElement(name = "requirements")
+    private Object requirements;
 
     public Map<String, BlueprintInput> getInputs() {
         return inputs;

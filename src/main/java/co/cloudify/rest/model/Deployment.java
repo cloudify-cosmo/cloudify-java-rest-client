@@ -106,6 +106,26 @@ public class Deployment implements Serializable {
     private Integer driftedInstances;
     @XmlElement(name = "unavailable_instances")
     private Integer unavailableInstances;
+    @XmlElement(name = "inputs_p")
+    private Object inputsP;
+    @XmlElement(name = "groups_p")
+    private Object groupsP;
+    @XmlElement(name = "policy_triggers_p")
+    private Object policyTriggersP;
+    @XmlElement(name = "policy_types_p")
+    private Object policyTypesP;
+    @XmlElement(name = "outputs_p")
+    private Object outputsP;
+    @XmlElement(name = "capabilities_p")
+    private Object capabilitiesP;
+    @XmlElement(name = "scaling_groups_p")
+    private Object scalingGroupsP;
+    @XmlElement(name = "workflows_p")
+    private Object workflowsP;
+    @XmlElement(name = "latest_execution_id")
+    private Object latestExecutionId;
+    @XmlElement(name = "latest_execution_workflow_id")
+    private Object latestExecutionWorkflowId;
 
     public String getId() {
         return id;

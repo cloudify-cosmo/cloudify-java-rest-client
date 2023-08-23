@@ -27,6 +27,7 @@ public class BlueprintInput implements Serializable {
     @XmlElement(name = "display_label")
     private String displayLabel;
     @XmlElement(name = "hidden")
+    private boolean hidden;
 
     public String getType() {
         return type;

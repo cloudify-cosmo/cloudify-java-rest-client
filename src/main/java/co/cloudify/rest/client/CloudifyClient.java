@@ -1,8 +1,8 @@
 package co.cloudify.rest.client;
 
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.WebTarget;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.client.WebTarget;
 
 import co.cloudify.rest.client.filters.BasicAuthenticator;
 import co.cloudify.rest.client.filters.TenantFilter;
@@ -17,7 +17,7 @@ import co.cloudify.rest.model.Token;
  * Use {@link #create(String, String, String, boolean, String)} to create a
  * {@link CloudifyClient} instance.
  * </p>
- * 
+ *
  * @author Isaac Shabtay
  */
 public class CloudifyClient extends AbstractCloudifyClient {

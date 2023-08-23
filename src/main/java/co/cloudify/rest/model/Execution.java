@@ -69,6 +69,8 @@ public class Execution implements Serializable {
     private Boolean resume;
     @XmlElement(name = "token")
     private String token;
+    @XmlElement(name = "parameters_p")
+    private Object parametersP;
 
 
 

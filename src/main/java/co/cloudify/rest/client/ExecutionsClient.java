@@ -3,13 +3,13 @@ package co.cloudify.rest.client;
 import java.util.Collections;
 import java.util.Map;
 
-import javax.ws.rs.NotFoundException;
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.client.Invocation.Builder;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.GenericType;
+import jakarta.ws.rs.NotFoundException;
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.Entity;
+import jakarta.ws.rs.client.Invocation.Builder;
+import jakarta.ws.rs.client.WebTarget;
+import jakarta.ws.rs.core.GenericType;
 
 import co.cloudify.rest.client.exceptions.CloudifyClientException;
 import co.cloudify.rest.client.exceptions.ExecutionNotFoundException;
@@ -20,7 +20,7 @@ import co.cloudify.rest.model.ListResponse;
 
 /**
  * A REST client for executions-related operations.
- * 
+ *
  * @author Isaac Shabtay
  */
 public class ExecutionsClient extends AbstractCloudifyClient {
@@ -47,9 +47,9 @@ public class ExecutionsClient extends AbstractCloudifyClient {
 
     /**
      * Returns a single execution by ID.
-     * 
+     *
      * @param id the execution ID
-     * 
+     *
      * @return A corresponding {@link Execution} instance.
      */
     public Execution get(String id) {
@@ -64,7 +64,7 @@ public class ExecutionsClient extends AbstractCloudifyClient {
 
     /**
      * Lists all executions.
-     * 
+     *
      * @return A list of all executions.
      */
     public ListResponse<Execution> list() {
@@ -91,11 +91,11 @@ public class ExecutionsClient extends AbstractCloudifyClient {
 
     /**
      * Starts an execution.
-     * 
+     *
      * @param deployment deployment to start for
      * @param workflowId workflow to start
      * @param parameters a {@link Map} of execution parameters
-     * 
+     *
      * @return An {@link Execution} object, representing the created execution.
      */
     public Execution start(Deployment deployment, String workflowId, Map<String, Object> parameters) {
@@ -104,11 +104,11 @@ public class ExecutionsClient extends AbstractCloudifyClient {
 
     /**
      * Starts an execution.
-     * 
+     *
      * @param deploymentId deployment to start for
      * @param workflowId   workflow to start
      * @param parameters   a {@link Map} of execution parameters
-     * 
+     *
      * @return An {@link Execution} object, representing the created execution.
      */
     public Execution start(String deploymentId, String workflowId, Map<String, Object> parameters) {

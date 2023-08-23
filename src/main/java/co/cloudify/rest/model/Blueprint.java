@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 /**
  * Note: this class will probably be auto-generated soon, so please don't add
  * any methods to it. It should only contain model fields, getters and setters.
- * 
+ *
  * @author Isaac Shabtay
  */
 @XmlRootElement
@@ -57,7 +57,11 @@ public class Blueprint implements Serializable {
     private Object labels;
     @XmlElement(name = "upload_execution")
     private Object uploadExecution;
-    
+    @XmlElement(name = "plan_p")
+    private Object planP;
+    @XmlElement(name = "requirements")
+    private Object requirements;
+
     public Blueprint() {
         super();
     }

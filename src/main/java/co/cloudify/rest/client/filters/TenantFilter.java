@@ -2,16 +2,16 @@ package co.cloudify.rest.client.filters;
 
 import java.io.IOException;
 
-import javax.ws.rs.client.ClientRequestContext;
-import javax.ws.rs.client.ClientRequestFilter;
-import javax.ws.rs.ext.Provider;
+import jakarta.ws.rs.client.ClientRequestContext;
+import jakarta.ws.rs.client.ClientRequestFilter;
+import jakarta.ws.rs.ext.Provider;
 
 import org.apache.commons.lang3.Validate;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
  * A {@link ClientRequestFilter} implementation for adding the tenant header.
- * 
+ *
  * @author Isaac Shabtay
  */
 @Provider

@@ -53,19 +53,28 @@ public class Plugin implements Serializable {
     private Boolean privateResource;
     @XmlElement(name = "wheels")
     private List<String> wheels;
-    @XmlElement(name = "file_server_path")
-    private String fileServerPath;
     @XmlElement(name = "resource_availability")
     private ResourceAvailability resourceAvailability;
+    @XmlElement(name = "excluded_wheels_p")
+    private Object excludedWheelsP;
+    @XmlElement(name = "supported_platform_p")
+    private Object supportedPlatformP;
+    @XmlElement(name = "supported_py_versions_p")
+    private Object supportedPythonVersionsP;
+    @XmlElement(name = "wheels_p")
+    private Object wheelsP;
+    @XmlElement(name = "yaml_url_paths")
+    private Object yamlUrlPaths;
+
 
     public String getPackageName() {
         return packageName;
     }
-    
+
     public String getPackageVersion() {
         return packageVersion;
     }
-    
+
     @Override
     public String toString() {
         return new ToStringBuilder(this)

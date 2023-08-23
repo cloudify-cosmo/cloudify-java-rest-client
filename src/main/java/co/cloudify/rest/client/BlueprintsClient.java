@@ -13,14 +13,14 @@ import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Collections;
 
-import javax.ws.rs.NotFoundException;
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.client.Invocation.Builder;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.GenericType;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.NotFoundException;
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.Entity;
+import jakarta.ws.rs.client.Invocation.Builder;
+import jakarta.ws.rs.client.WebTarget;
+import jakarta.ws.rs.core.GenericType;
+import jakarta.ws.rs.core.MediaType;
 
 import co.cloudify.rest.model.Deployment;
 import org.apache.commons.compress.archivers.ArchiveEntry;
@@ -36,7 +36,7 @@ import co.cloudify.rest.model.ListResponse;
 
 /**
  * REST client for blueprint-related operations.
- * 
+ *
  * @author Isaac Shabtay
  */
 public class BlueprintsClient extends AbstractCloudifyClient {
@@ -63,9 +63,9 @@ public class BlueprintsClient extends AbstractCloudifyClient {
 
     /**
      * Get a blueprint by ID.
-     * 
+     *
      * @param id ID of blueprint to get
-     * 
+     *
      * @return A {@link Blueprint} instance for that blueprint.
      */
     public Blueprint get(final String id) {
@@ -80,13 +80,13 @@ public class BlueprintsClient extends AbstractCloudifyClient {
 
     /**
      * Uploads a blueprint archive.
-     * 
+     *
      * @param id      blueprint ID
      * @param archive archive file
      * @param main    main YAML filename
-     * 
+     *
      * @return A {@link Blueprint} instance for the uploaded blueprint.
-     * 
+     *
      * @throws IOException I/O issue encountered while reading archive.
      */
     public Blueprint uploadArchive(final String id, final File archive, final String main) throws IOException {
@@ -104,11 +104,11 @@ public class BlueprintsClient extends AbstractCloudifyClient {
      * Uploads a blueprint from the URL. This command doesn't download the URL
      * contents locally. The specified URL must be accessible from within Cloudify
      * Manager.
-     * 
+     *
      * @param id         blueprint ID
      * @param archiveUrl URL to archive
      * @param main       main YAML filename
-     * 
+     *
      * @return A {@link Blueprint} instance for the uploaded blueprint
      */
     public Blueprint upload(final String id, final URL archiveUrl, final String main) {
@@ -128,13 +128,13 @@ public class BlueprintsClient extends AbstractCloudifyClient {
 
     /**
      * Uploads a blueprint from a local directory.
-     * 
+     *
      * @param id            blueprint ID
      * @param rootDirectory root directory of the blueprint
      * @param main          main YAML filename
-     * 
+     *
      * @return A {@link Blueprint} instance for the uploaded blueprint
-     * 
+     *
      * @throws IOException A problem occured while creating the blueprint archive.
      */
     public Blueprint upload(final String id, final File rootDirectory, final String main) throws IOException {
@@ -180,9 +180,9 @@ public class BlueprintsClient extends AbstractCloudifyClient {
 
     /**
      * Deletes a blueprint.
-     * 
+     *
      * @param id ID of blueprint to delete
-     * 
+     *
      * @return The deleted blueprint.
      */
     public Blueprint delete(final String id) {
@@ -204,9 +204,9 @@ public class BlueprintsClient extends AbstractCloudifyClient {
 
     /**
      * Returns a list of all blueprints with ID's containing a string.
-     * 
+     *
      * @param searchString string to search for
-     * 
+     *
      * @return A list of matching blueprints.
      */
     public ListResponse<Blueprint> list(final String searchString) {
@@ -215,11 +215,11 @@ public class BlueprintsClient extends AbstractCloudifyClient {
 
     /**
      * Returns a list of all blueprints with ID's containing a string.
-     * 
+     *
      * @param searchString string to search for
      * @param sortKey      key to sort by
      * @param descending   <code>true</code> for a descending sorting order
-     * 
+     *
      * @return A list of matching blueprints.
      */
     public ListResponse<Blueprint> list(final String searchString, final String sortKey, final boolean descending) {
